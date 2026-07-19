@@ -1,191 +1,288 @@
-# Hotel Grand Palace - Java + React Booking System
+<p align="center">
 
-[![Java](https://img.shields.io/badge/Java-17%2B-blue)](https://www.java.com)
-[![React](https://img.shields.io/badge/React-18-61DAFB)](https://reactjs.org)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+<img src="https://readme-typing-svg.herokuapp.com?font=Poppins&weight=700&size=28&duration=3000&pause=1000&color=7C3AED&center=true&vCenter=true&width=900&lines=StaySphere;Enterprise+Hotel+Management+System;Java+Backend+%7C+React+Frontend;REST+API+%7C+Modern+Dashboard" />
 
-> A premium Hotel Room Booking System with **Java Backend** and **React Frontend**.
-> Built for Java course projects, GitHub portfolios, and placement interviews.
+</p>
 
-![Dashboard Preview](screenshots/dashboard-preview.png)
+<p align="center">
 
-## Architecture
+<img src="https://img.shields.io/badge/Java-17+-orange?style=for-the-badge&logo=openjdk&logoColor=white"/>
+<img src="https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
+<img src="https://img.shields.io/badge/Vite-5-purple?style=for-the-badge&logo=vite"/>
+<img src="https://img.shields.io/badge/REST_API-✔-success?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/OOP-Java-blue?style=for-the-badge"/>
 
-```
-+------------------+         REST API (JSON)         +------------------+
-|   React Frontend |  <--------------------------->  |  Java Backend    |
-|   (Port 3000)    |                               |  (Port 8080)     |
-+------------------+                               +------------------+
-        |                                                    |
-        | React Router                                       | HttpServer (built-in)
-        | Lucide Icons                                       | HotelService (Singleton)
-        | CSS3 Dark Theme                                    | FileManager (Serialization)
-        v                                                    v
-   Dashboard Page                                      Room, Guest, Booking
-   Rooms Page                                          models (OOP)
-   Bookings Page                                       
-   New Booking Page                                    
-```
+</p>
 
-## Features
+<h1 align="center">🏨 StaySphere</h1>
 
-### Backend (Java)
-- Pure Java with built-in `HttpServer` - **zero external dependencies!**
-- REST API with CORS support
-- Full OOP design: Room, Guest, Booking classes
-- Singleton HotelService for business logic
-- Java Serialization for data persistence
-- GST calculation (18%) on all bills
-- 12 rooms across 4 categories with Indian pricing
-
-### Frontend (React)
-- Modern React 18 with Hooks
-- React Router for SPA navigation
-- Dark theme with gradient cards
-- Lucide React icons
-- Responsive sidebar layout
-- Real-time data from Java API
-- Toast notifications
-- Form validation
-
-## Tech Stack
-
-| Layer | Technology |
-|-------|-----------|
-| Backend | Java 17, Built-in HttpServer |
-| Frontend | React 18, React Router, Lucide Icons |
-| Data | Java Serialization (.dat files) |
-| Styling | CSS3 with custom properties |
-
-## How to Run
-
-### Prerequisites
-- Java JDK 17 or higher
-- Node.js 16+ and npm
-
-### Step 1: Start the Java Backend
-
-```bash
-cd backend
-mkdir data
-javac -encoding UTF-8 src/api/*.java src/model/*.java src/service/*.java src/repository/*.java src/utility/*.java
-java -cp . api.HotelApiServer
-```
-
-You should see:
-```
-========================================
-  Hotel API Server Started!
-  URL: http://localhost:8080
-========================================
-```
-
-### Step 2: Start the React Frontend (New Terminal)
-
-```bash
-cd frontend
-npm install
-npm start
-```
-
-The browser will open at `http://localhost:3000`
-
-### Step 3: Use the Application
-
-1. **Dashboard** - View statistics, occupancy rates, recent bookings
-2. **Rooms** - Browse all rooms with images, filter by type
-3. **Bookings** - View all bookings, check-in, check-out, cancel
-4. **New Booking** - Create bookings with guest details
-
-## API Endpoints
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | /api/rooms | All rooms |
-| GET | /api/rooms/available | Available rooms |
-| GET | /api/bookings | All bookings |
-| POST | /api/bookings/create | Create booking |
-| POST | /api/bookings/cancel | Cancel booking |
-| POST | /api/bookings/checkin | Check in guest |
-| POST | /api/bookings/checkout | Check out guest |
-| GET | /api/stats | Dashboard statistics |
-
-## Project Structure
-
-```
-Hotel-Booking-Java-React/
-├── backend/
-│   └── src/
-│       ├── api/
-│       │   └── HotelApiServer.java      # REST API server
-│       ├── model/
-│       │   ├── Room.java                # Room entity
-│       │   ├── Guest.java               # Guest entity
-│       │   └── Booking.java             # Booking entity
-│       ├── service/
-│       │   └── HotelService.java        # Business logic
-│       ├── repository/
-│       │   └── FileManager.java         # File persistence
-│       └── utility/
-│           └── BookingIdGenerator.java  # ID generation
-│
-├── frontend/
-│   ├── public/
-│   │   └── index.html
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── Layout.js                # Sidebar + Header
-│   │   │   └── Layout.css
-│   │   ├── pages/
-│   │   │   ├── Dashboard.js             # Stats dashboard
-│   │   │   ├── Rooms.js                 # Room listing
-│   │   │   ├── Bookings.js              # Booking management
-│   │   │   └── NewBooking.js            # Booking form
-│   │   ├── styles/
-│   │   │   ├── index.css
-│   │   │   └── App.css
-│   │   ├── App.js
-│   │   └── index.js
-│   └── package.json
-│
-├── data/                                 # Runtime data files
-├── screenshots/                          # Demo images
-└── README.md
-```
-
-## Room Pricing (Indian Rupees)
-
-| Type | Price/Night | Capacity | Rooms |
-|------|-------------|----------|-------|
-| Single | Rs 1,500 - 1,800 | 1 | 3 |
-| Double | Rs 2,800 - 3,200 | 2 | 4 |
-| Deluxe | Rs 4,500 - 5,000 | 3 | 3 |
-| Suite | Rs 8,000 - 12,000 | 4-6 | 3 |
-
-## Why This Architecture?
-
-| Aspect | Benefit |
-|--------|---------|
-| **Pure Java Backend** | Shows deep OOP understanding, no framework magic |
-| **Built-in HttpServer** | Zero dependencies, easy to run anywhere |
-| **React Frontend** | Modern UI that impresses recruiters |
-| **File Persistence** | Demonstrates serialization, no DB setup needed |
-| **Dark Theme** | Professional, modern appearance |
-
-## Learning Outcomes
-
-- **Java OOP**: Classes, inheritance, encapsulation, singleton
-- **REST API Design**: HTTP methods, JSON, CORS
-- **React**: Hooks, Router, component architecture
-- **Full-Stack Integration**: Connecting frontend to backend
-- **Data Persistence**: Java Serialization
-
-## Author
-
-**[Your Name]**
-- Computer Science Student
-- Aspiring Java / Full-Stack Developer
+<p align="center">
+A modern <b> Hotel Booking & Management System</b> built using <b>Java</b> and <b>React</b>. StaySphere simplifies hotel operations by managing rooms, guests, bookings, billing, occupancy analytics, and hotel revenue through a clean and responsive dashboard.
+</p>
 
 ---
 
-⭐ Star this repository if you found it helpful!
+<p align="center">
+
+### 🔗 Quick Navigation
+
+<a href="#-overview">Overview</a> •
+<a href="#-features">Features</a> •
+<a href="#-screenshots">Screenshots</a> •
+<a href="#-architecture">Architecture</a> •
+<a href="#-tech-stack">Tech Stack</a> •
+<a href="#-project-structure">Project Structure</a> •
+<a href="#-api-endpoints">API</a> •
+<a href="#-getting-started">Getting Started</a> •
+<a href="#-future-enhancements">Roadmap</a> •
+<a href="#-author">Author</a>
+
+</p>
+
+---
+
+# 🚀 Overview
+
+StaySphere is an enterprise-inspired hotel management platform that streamlines the complete booking lifecycle—from room availability and guest registration to check-in, check-out, GST billing, and real-time analytics.
+
+The project demonstrates strong **Object-Oriented Programming**, **REST API development**, **state management**, and **frontend-backend integration** using a lightweight Java backend and a modern React interface.
+
+---
+
+# ✨ Features
+
+✅ Live Dashboard
+
+✅ Room Management
+
+✅ Guest Registration
+
+✅ Booking System
+
+✅ Check-In & Check-Out
+
+✅ Booking Cancellation
+
+✅ GST Billing
+
+✅ Revenue Analytics
+
+✅ Occupancy Tracking
+
+✅ Responsive UI
+
+✅ Persistent Data Storage
+
+---
+
+# 📸 Screenshots
+
+## Dashboard
+
+<img src="screenshots/dashboard-overview.png"/>
+
+---
+
+## Rooms
+
+<img src="screenshots/rooms-gallery.png"/>
+
+---
+
+## Create Booking
+
+<img src="screenshots/new-booking-form.png"/>
+
+---
+
+## Booking Management
+
+<img src="screenshots/booking-info.png"/>
+
+
+
+# 🏗 Architecture
+
+```mermaid
+flowchart LR
+
+A[React Frontend]
+--> B[REST API]
+
+B --> C[Java HttpServer]
+
+C --> D[Business Logic]
+
+D --> E[Serialization Storage]
+```
+
+---
+
+# 💻 Tech Stack
+
+| Technology | Purpose |
+|------------|----------|
+| Java 17 | Backend |
+| Java HttpServer | REST API |
+| React 18 | Frontend |
+| React Router | Navigation |
+| Vite | Build Tool |
+| CSS3 | Styling |
+| Lucide Icons | Icons |
+| Java Serialization | Persistent Storage |
+
+---
+
+# 📁 Project Structure
+
+```
+StaySphere/
+
+├── backend/
+│
+├── frontend/
+│
+├── screenshots/
+│
+├── README.md
+---
+
+# ⚙️ Implementation
+
+### Backend
+
+- Object-Oriented Design
+- Singleton Service
+- RESTful API
+- Java Serialization
+- File Handling
+- Business Logic Layer
+
+### Frontend
+
+- React Components
+- React Router
+- Responsive Dashboard
+- Room Cards
+- Booking Forms
+- Statistics Panel
+
+---
+
+# 🔗 API Endpoints
+
+| Method | Endpoint |
+|----------|----------------------------|
+| GET | /api/rooms |
+| GET | /api/bookings |
+| GET | /api/stats |
+| POST | /api/bookings/create |
+| POST | /api/bookings/checkin |
+| POST | /api/bookings/checkout |
+| POST | /api/bookings/cancel |
+
+---
+
+# 🚀 Getting Started
+
+## Clone Repository
+
+```bash
+git clone https://github.com/shravanisahare14-web/staysphere-management-system.git
+```
+
+## Backend
+
+```bash
+cd backend
+
+javac -encoding UTF-8 -d . src/model/*.java src/repository/*.java src/service/*.java src/api/*.java
+
+java api.HotelApiServer
+```
+
+Backend runs on
+
+```
+http://localhost:8080
+```
+
+---
+
+## Frontend
+
+```bash
+cd frontend
+
+npm install
+
+npm run dev
+```
+
+Frontend runs on
+
+```
+http://localhost:5173
+```
+
+---
+
+# 🌟 Project Highlights
+
+- Enterprise-inspired UI
+- Complete Booking Lifecycle
+- Java + React Full Stack
+- Lightweight REST API
+- Real-world GST Billing
+- Dashboard Analytics
+- Modular OOP Design
+- Persistent Storage
+- Responsive Layout
+
+---
+
+# 🚀 Future Enhancements
+
+- 🔐 Authentication
+- 🛢 MySQL Integration
+- 💳 Payment Gateway
+- 📧 Email Notifications
+- 📱 Progressive Web App
+- ☁️ Cloud Deployment
+- 🐳 Docker Support
+
+---
+
+# 📚 Concepts Demonstrated
+
+- Object-Oriented Programming
+- Encapsulation
+- Abstraction
+- Singleton Pattern
+- REST API Development
+- CRUD Operations
+- Java File Handling
+- Java Serialization
+- React Hooks
+- Component Architecture
+- Responsive Design
+
+---
+
+# 👨‍💻 Author
+
+**Shravani Sahare**
+
+B.Tech Electronics & Communication Engineering
+
+Java • React • Full Stack Development
+
+⭐ If you found this project helpful, consider giving it a **Star**!
+
+---
+
+<p align="center">
+
+Made with ❤️ using Java & React
+
+</p>

@@ -85,7 +85,7 @@ The project demonstrates strong **Object-Oriented Programming**, **REST API deve
 
 ## Rooms
 
-<img src="screenshots/rooms-gallery.png"/>
+<img src="screenshots/room-gallery.png"/>
 
 ---
 
